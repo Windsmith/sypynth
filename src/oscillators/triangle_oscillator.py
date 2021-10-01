@@ -1,8 +1,10 @@
-from sawtooth-oscillator import SawtoothOscillator
+from sawtooth_oscillator import SawtoothOscillator
+import math
+
 
 class TriangleOscillator(SawtoothOscillator):
     def __next__(self):
-        div = (self._i + self._p)/self._period
+        div = (self._i + self._p) / self._period
         val = 2 * (div - math.floor(0.5 + div))
         val = (abs(val) - 0.5) * 2
         self._i = self._i + 1
